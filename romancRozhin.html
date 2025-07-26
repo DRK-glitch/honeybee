@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Rozhin ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ffccd5, #ffe6f0);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .heart {
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-300px) rotate(-45deg); opacity: 0; }
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      top: 30%;
+      color: #a00038;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4; }
+      50% { text-shadow: 0 0 20px #fff, 0 0 40px #ff1493; }
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      border: none;
+      background: #ff69b4;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background: #ff1493;
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      z-index: 10;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.5) translate(-50%, -50%); }
+      to { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+    }
+
+    .popup h2 {
+      color: #d1005f;
+      margin-bottom: 15px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
+    }
+
+    /* Floating Hearts Generator */
+    .floating-heart {
+      position: absolute;
+      animation: float 10s infinite ease-in;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="top:90%; left:10%; animation-delay: 0s;"></div>
+  <div class="heart" style="top:95%; left:30%; animation-delay: 2s;"></div>
+  <div class="heart" style="top:90%; left:50%; animation-delay: 4s;"></div>
+  <div class="heart" style="top:95%; left:70%; animation-delay: 6s;"></div>
+  <div class="heart" style="top:90%; left:90%; animation-delay: 8s;"></div>
+
+  <div class="container">
+    <h1>For Rozhin 💖</h1>
+    <button class="btn" onclick="showLove()">Click Me 💌</button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h2>Love you forever ❤️</h2>
+    <p>The love of my life: <strong>Rozhin</strong></p>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    document.getElementById('overlay').onclick = () => {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
